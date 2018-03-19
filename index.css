@@ -1,0 +1,590 @@
+/*Imports Google Fonts Oswald, Raleway, and Shadows Into Light*/
+@import url('https://fonts.googleapis.com/css?family=Oswald|Raleway|Shadows+Into+Light');
+
+/*Styling affecting html and body elements*/
+html, body {
+  /*html and body take up full screen*/
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  /*Fixes menu bar overflow issue*/
+  overflow-x: hidden;
+}
+
+/*Styling for the h2 heading*/
+h2 {
+  font-size: 12vw;
+  font-family: 'Raleway', sans-serif;
+  color:  #d6c61b;
+  text-decoration: none;
+  margin: 0;
+  text-align: center;
+}
+
+/* Styling affecting all links*/
+a {
+  font-size: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Styling for the header container, add background image to cover full header container, set header to take up full screen, and sets default text styling within header*/
+.header {
+  background: url(images/citySkyline.png) center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  font-size: 6vw;
+  font-family: 'Shadows Into Light', cursive;
+  overflow-x: hidden;
+}
+
+/*Styliing for fa-bars class, font-awesome icon for mobile menu bars, z-index set to show above all other elements*/
+.fa-bars {
+  color: white;
+  text-align: left !important;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0,0,0,1);
+  z-index: 30;
+}
+
+/*Styling for mobileNav menu, stays on screen while visible due to fixed positioning*/
+.mobileNav {
+  position: fixed;
+  width: 60vw;
+  height: 100vh;
+  text-align: left;
+  background-color: #d6c61b;
+  box-shadow: 5px 8px 8px black;
+  display: none;
+}
+
+/*Styling for mobileNavItem class*/
+.mobileNavItem {
+  padding-left: 10%;
+  font-size: 8vw;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  margin-top: 10vh;
+}
+
+/*Styling for mobileNavItem hover effect, on mobile clack text will become black*/
+.mobileNavItem:hover {
+  color: rgba(0,0,0,0.8)
+}
+
+/*Styling for the PC navbar, z-index makes it appear above all else on page, full width with no padding or margins on it, adds partially transparent black background*/
+.nav {
+  text-align: center;
+  color: #f2f4f7;
+  font-family: 'Raleway', sans-serif;
+  font-size: 3vw;
+  height: auto;
+  margin: 0;
+  background-color: rgba(0,0,0,0.5);
+  padding-bottom: 1%;
+  z-index: 1000;
+  width: 100%;
+  display: none;
+}
+
+/*Styling for applied sticky class (See JS functions) to make navbar stick on scroll and keep same dimensions as navbar*/
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+  margin: none !important;
+}
+
+/*Styling for each individual item in the navbar, sets the padding spacing between items as well as a border, inline-block keeps the items in the same line, sets transition timing parameters for hover effects*/
+.navItem {
+  margin: 0;
+  width:auto;
+  height: auto;
+  padding-top: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+  border-bottom: white 4px solid;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-transition: font-size 0.4s, border-top 0.4s, background-color 0.4s, width 0.4s, height 0.4s, border-bottom 0.4s;
+  transition: font-size 0.4s, border-top 0.4s, background-color 0.4s, width 0.4s, height 0.4s, border-bottom 0.4s;
+}
+
+/*Styling for the hover effects applied to each individual item in the navbar*/
+.navItem:hover {
+  width:auto;
+  height: auto;
+  font-size: 3.6vw;
+  border-top: white 4px solid;
+  background-color: #d6c61b;
+  cursor: pointer;
+  border-bottom: none;
+}
+
+/*Styling for the (BrandName) that flies in from off screen in the header, absolute positioning keeps it from moving on navbar scroll, left property set so it is off screen on page load*/
+.brand {
+  position: absolute;
+  top: 20vh;
+  left: -100%;
+  opacity: 0.3;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 10vw;
+  color: #d6c61b;
+}
+
+/*Styling for animateBrand class (see JS functions) applied on page load, applies slideIn animation to brand class*/
+.animateBrand {
+  -webkit-animation: slideIn 1s forwards ease-out;
+  animation: slideIn 1s forwards ease-out;
+}
+
+/*Styling for the (BrandTag) that flies in from off screen in the header, absolute positioning keeps it from moving on navbar scroll, left property set so it is off screen on page load*/
+.brandTag {
+    position: absolute;
+    top: 30vh;
+    left: -100%;
+    color: #d6c61b;
+    font-size: 7vw;
+}
+
+/*Styling for animateBrandTag class (see JS functions) applied on page load, applies slideIn2 animation to brandTag class*/
+.animateBrandTag {
+  -webkit-animation: slideIn2 1s 0.6s forwards ease-out;
+  animation: slideIn2 1s 0.6s forwards ease-out;
+}
+
+
+/* Keyframes animation causes slide in from offscreen for brand class and makes opaque by end of movement, -webkit for Safari support */
+@-webkit-keyframes slideIn {
+
+  from {
+    left: -100vw;
+    opacity: 0.3;
+  }
+
+  to {
+    -webkit-transform: translateX(155vw);
+    opacity: 1;
+  }
+
+}
+
+/* Keyframes animation causes slide in from offscreen and makes opaque by end of movement*/
+@keyframes slideIn {
+    from {
+      left: -100%;
+      opacity: 0.3;
+    }
+
+    to {
+      transform: translateX(155vw);
+      opacity: 1;
+    }
+}
+
+/* Keyframes animation causes slide in from offscreen for brandTag class and makes opaque by end of movement, -webkit for Safari support */
+@-webkit-keyframes slideIn2 {
+
+  from {
+    left: -100vw;
+    opacity: 0.3;
+  }
+
+  to {
+    -webkit-transform: translateX(165vw);
+    opacity: 1;
+  }
+
+}
+
+/* Keyframes animation causes slide in from offscreen for brandTag class and makes opaque by end of movement*/
+@keyframes slideIn2 {
+    from {
+      left: -100%;
+      opacity: 0.3;
+    }
+
+    to {
+      transform: translateX(165vw);
+      opacity: 1;
+    }
+}
+
+/*Styling for row class, sets padding spacing for left and right as well as top and bottom*/
+.row {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+/*Styling for column class, sets width to 100% of the row they are contained in (excluding padding)*/
+.col {
+  width: 100%;
+}
+
+/*Clearfix for rows to stop float issues*/
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Clearfix for columns to stop float issues*/
+.col:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Styling for about id, background color set to white (added in id for ease of adjustment to each individual website row)*/
+#about {
+  background-color: white;
+}
+
+/*Styling for colText class applied to text in columns, centers and sets font-size for mobile, defines margin between text and element above*/
+.colText {
+  font-size: 4vw;
+  font-family: 'Oswald', sans-serif;
+  margin-top: 15%;
+  text-align: center;
+}
+
+/*Styling for imgHolder class, container for images set to 100% width of column containing it, height automatically set to content*/
+.imgHolder {
+  width: 100%;
+  height: auto;
+}
+
+/*Styling for images within imgHolder class, 100% width of column and imgHolder on mobile*/
+.imgHolder img {
+  max-width: 100%;
+}
+
+/*Styling for imgHolderRight, empty on mobile as no floats need be applied*/
+.imgHolderRight {
+
+}
+
+/*Shortcut class to apply right text alignment*/
+.right {
+  text-align: right !important;
+}
+
+/*Shortcut class to apply center text alignment*/
+.center {
+  text-align: center !important;
+}
+
+/*Styling for symbolRow class, auto margin centers horizontally and top margin divides from element above*/
+.symbolRow {
+  font-family: 'Raleway', sans-serif;
+  margin-top: 7% !important;
+  margin: auto;
+}
+
+/*Styling for symbol class, sets block display to keep one element in a line on mobile, line-height centers text in symbol and background, border-radius makes symbol and background circular*/
+.symbol {
+  display: block;
+  width: 50vw;
+  height: 50vw;
+  text-align: center;
+  background-color: #4087f9;
+  color: white;
+  line-height: 50vw;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 2%;
+  font-size: 10vw;
+}
+
+/*Styling for symbolText class, changes text caption below each symbol*/
+.symbolText {
+  display: block;
+  width: 50vw;
+  height: 50vw;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 8.3vw;
+  margin: auto;
+  margin-top: 3%;
+}
+
+/* Styling for contact id, centers header*/
+#contact {
+  text-align: center;
+}
+
+/*Styling for contact class*/
+.contact {
+  font-family: 'Raleway', sans-serif;
+  color:  #d6c61b;
+  font-size: 6vw;
+  display: block;
+  text-align: center;
+  margin-top: 10%;
+}
+
+/* Following three styles remove outline on input fields and buttons when focused/clicked on*/
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+/*Styling for input fields*/
+input[type=text], input[type=email], textarea {
+  height: auto;
+  margin: auto;
+  font-size: 3vw;
+  box-sizing: border-box;
+  border: 2px solid black;
+  width: 70%;
+  margin-top: 10% !important;
+  padding-left: 1%;
+}
+
+/*Styling specific to textarea input field*/
+textarea {
+  height: 40vw;
+  width: 80%;
+  font-family: 'Raleway', sans-serif;
+  margin: auto;
+  resize: none;
+}
+
+/*Styling for contactText class*/
+.contactText {
+  width: 50vw;
+  display: inline-block;
+}
+
+/*Styling for buttons, sets up transition hover effects*/
+button {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3vw;
+  background-color: #4087f9;
+  margin-top: 10%;
+  color: white;
+  box-sizing: border-box;
+  border: 2px solid black;
+  padding: 1% 2% 1% 2%;
+  -webkit-transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+  transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+}
+
+/*Hover effects for button*/
+button:hover {
+  font-size: 3.5vw;
+  background-color: white;
+  color: #4087f9;
+  cursor: pointer;
+}
+
+/*Styling for footer of website, line-height set for mobile to adjust spacing*/
+.footer {
+  background-color: black;
+  padding-left: 2.5% !important;
+  padding-right: 2.5% !important;
+  padding-top: 2% !important;
+  padding-bottom: 2% !important;
+  color: white;
+  font-size: 4vw;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  line-height: 8vw;
+}
+
+/*Columns within footer will have a black background*/
+.footer .col {
+  background-color: black;
+  box-sizing: border-box;
+}
+
+/*Blank hoursOffset class, used on PC only*/
+.hoursOffset {
+
+}
+
+/*Styling for icons class, sets icons within in a line*/
+.icons {
+  text-align: center;
+  display: inline-block;
+  margin-top: 5%;
+}
+
+/*Styling for links within icons class, adds margins*/
+.icons a {
+  margin: 0% 2% 0% 2%;
+}
+
+/*Styling for fa icon class, sets up hover transitions*/
+.fa {
+  padding: 2%;
+  text-align: center;
+  -webkit-transition: color 0.3s, opacity 0.3s;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+/*Styling for fa icon class hover effects
+.fa:hover {
+  color: #4087f9;
+  opacitY: 0.8;
+}
+
+/* Beginning of media queries to support responsive site design */
+
+/*Media query set for mobile devices up to a width of 575.9999 px, small devices like phones*/
+@media screen and (max-width: 575.999px) {
+
+    /*Switches order of testimonials text and heading+image in mobile display*/
+    #testimonials { display: flex; flex-flow: column-reverse; }
+
+    /*Sets display order of symbol and symbolText elements on mobile display so text follows symbol immediately*/
+    .symbolRow {
+      display: flex;
+      flex-flow: column;
+      }
+      #s1 {order: 1;}
+      #t1 {order: 2;}
+      #s2 {order: 3;}
+      #t2 {order: 4;}
+      #s3 {order: 5;}
+      #t3 {order: 6;}
+}
+
+
+/*Media query set for devices of width equal to or greater than 576px */
+@media only screen and (min-width: 576px) {
+
+  .fa-bars {
+    display: none !important;
+  }
+
+  /*Fixes overflow issue on  PC, keeps menu bar in place on scroll */
+  .sticky {
+    padding-left: 0.55vw
+  }
+
+
+  /*brand and brandTag changes slightly modify top margin and text size from mobile to PC */
+  .brand {
+    top: 23vh;
+    font-size: 9vw;
+  }
+
+  /*brandTag top margin and text-size slightly modified for PC*/
+  .brandTag {
+    top: 50vh;
+    font-size: 6vw;
+  }
+
+  /*col width set to half of row width, floated left to create two-column layout on PC*/
+  .col {
+    width: 50%;
+    float: left;
+  }
+
+  /*colText class given smaller font size and inheritance of text alignment from containing element for PC*/
+  .colText {
+    font-size: 2.5vw;
+    text-align: inherit;
+  }
+
+  /*imgHolder class set to 100% of width of column, height auto adjust to content */
+  .imgHolder {
+    width: 100%;
+    height: auto;
+  }
+
+  /*imgHolder class images set to max width of 95% to add some spacing between image and next column*/
+  .imgHolder img {
+    max-width: 95%;
+  }
+
+  /*symbol class displays inline-block on PC, all on one line, width adjusted so margins and size of symbols take up approximately full row*/
+  .symbol {
+    display: inline-block;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-top: 0;
+    width: 15.3vw;
+    height: 15.3vw;
+    line-height: 15.3vw;
+    font-size: 3vw;
+  }
+
+  /*symbolText class displays inline-block on PC, all on one line, width adjusted so margins and size of text containers take up approximately full row*/
+  .symbolText {
+    display: inline-block;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    width: 15.3vw;
+    height: 15.3vw;
+    font-size: 2.5vw;
+  }
+
+  /* h2 set so heading text inherits text alignment from parent container, font-size adjusted*/
+  h2 {
+    font-size: 6vw;
+    text-align: inherit;
+  }
+
+  /*imgHolderRight now floats containing images to right of container on PC*/
+  .imgHolderRight {
+    float: right;
+  }
+
+  /*contact class has text aligned to left on PC, adjusts font size and margin for PC*/
+  .contact {
+    text-align: left;
+    font-size: 4vw;
+    margin-top: 5%;
+  }
+
+  /*Adjusts input field margins for PC*/
+  input[type=text], input[type=email], textarea {
+    margin-top: 5% !important;
+  }
+
+  /*Adjusts textarea height for PC*/
+  textarea {
+    height: 18vw;
+    width: 90%;
+  }
+
+  /*Aligns footer text to left on PC, inherits line-height to avoid extra spacing*/
+  .footer{
+    font-size: 1.5vw;
+    height: auto;
+    text-align: left;
+    line-height: inherit;
+  }
+
+  /*Adusts an offset for hours so it appears in line with the rest of the hours text*/
+  .hoursOffset {
+    margin-left: 5vw;;
+  }
+
+  /*Adjusts nav to display as a block element*/
+  .nav {
+    display: block;
+  }
+
+  /*Corrects for mobile phone rotation so mobileNav menu will not stay on screen*/
+  .mobileNav {
+    display: none !important;
+  }
+
+}

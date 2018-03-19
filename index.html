@@ -1,0 +1,176 @@
+<!--Design created by Amil Naik under the MIT license-->
+<!--
+The MIT License (MIT)
+
+Copyright (c) 2018 Amil Naik
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+ -->
+<!--Feel free to use this on your own sites as well as tweak, adjust, and redistribute however you like-->
+<!--While not required, credit/attribution is appreciated-->
+<!DOCTYPE html>
+<!-- Set language to english-->
+<html lang="en">
+<head>
+  <!--Set character set to utf-8-->
+  <meta charset="utf-8">
+  <!-- Set viewport to scale with device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Includes the CSS stylesheet -->
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <!-- Add font-awesome icon library -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Includes jquery through Google's CDN and the template script-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="index.js" async></script>
+
+</head>
+
+<body>
+<!--Creates header container-->
+<div class="header" id="home">
+  <!--font-awesome icon for menu bar on mobile-->
+  <i class="fa fa-bars"></i>
+  <!--Container mobileNav for mobile menu-->
+  <div class="mobileNav">
+    <br>
+    <!--Mobile nav menu items each contained by link to appropriate section and mobileNavItem container-->
+    <a href="#home"><div class="mobileNavItem">Home</div></a>
+    <a href="#about"><div class="mobileNavItem">About</div></a>
+    <a href="#contact"><div class="mobileNavItem">Contact</div></a>
+    <a href="#testimonials"><div class="mobileNavItem">Testimonials</div></a>
+    <a href="#services"><div class="mobileNavItem">Services</div></a>
+  </div>
+  <!--Creates nav bar containger-->
+  <div class="nav">
+    <!--Listing of nav bar items with links to appropriate part of site included-->
+    <a href="#home"><div class="navItem">Home</div></a><a href="#about"><div class="navItem">About</div></a><a href="#contact"><div class="navItem">Contact</div></a><a href="#testimonials"><div class="navItem">Testimonials</div></a><a href="#services"><div class="navItem">Services</div></a>
+  </div>
+  <!-- Fill the (BrandName) with your company name and (BrandTag) with your company's tagline -->
+  <div class="brand animateBrand">BrandName</div>
+  <div class="brandTag animateBrandTag">BrandTag</div>
+</div>
+
+<!--Sets up a row with two columns within, gives it the id=about for nav bar linking -->
+<div id="about" class="row">
+  <!--Column 1 contains About Us header and image -->
+  <div class="col">
+    <h2>About Us</h2>
+    <!--imgholder div class contains the image and limits the size of the image, placeholder image-->
+    <div class="imgHolder">
+      <img src="images/image.png" alt="Your image text here!">
+    </div>
+  </div>
+  <!--Column 2 contains some descriptive text for the section, styled with class colText-->
+  <div class="col">
+    <!--Fill this text with info about your business or yourself-->
+    <div class="colText">
+      This is the place to talk about your business! Show off what you do, talk about your roots, or really whatever you think belongs in this section.
+    </div>
+  </div>
+</div>
+
+<!--Sets up a row with two columns within, gives it the id=contact for nav bar linking -->
+<div id="contact" class="row">
+  <!--Header excluded from coluns to center it-->
+  <h2>Contact</h2><br>
+  <!--Styled contact form, but note PHP code is not in place to utilize it or validate entries. There are plenty of resources online if you wish to copy and paste some code for it.-->
+  <form id="contactFormSend" method="POST" autocomplete="on" action="">
+    <!--Column 1 contains the name and email fields as well as labels-->
+    <div class="col">
+      <!--contact class contains the fields and labels-->
+      <div class="contact">
+        <!--contactText class contains just the labels for the fields-->
+        <div class="contactText">Name:</div><input type="text" name="name" maxlength="100" placeholder="Your Name">
+      </div>
+      <div class="contact">
+        <div class="contactText">Email:</div><input type="text" name="email" maxlength="100" placeholder="Your Email Address">
+      </div>
+    </div>
+    <!--Column 2 contains the email field and label-->
+    <div class="col">
+      <!--Label centered over field-->
+      <div class="contact center">Message:</div>
+        <textarea name ="message" maxlength="8000" placeholder="Your Message"></textarea>
+    </div>
+    <button name="submit">Submit</button>
+  </form>
+</div>
+
+<!--Sets up a row with two columns within, gives it the id=testimonials for nav bar linking -->
+<div id="testimonials" class="row">
+  <!--Column 1 contains some descriptive text for the section, styled with class colText-->
+    <div class="col">
+      <!--Fill in some customer testimonials here-->
+      <div class="colText">
+      "This company had outstanding service! Nothing can top their superior performance in every category!"<br>
+      -John Doe
+      <br><br>
+      "Come to this company for every need! They have everything you could ask for, and everything you'd forget to ask for!"<br>
+      -Jane Doe
+    </div>
+    </div>
+
+    <!--Column 2 contains Testimonials header and image, right class floats the image to the right side of the container and column, -->
+    <div class="col right">
+        <h2>Testimonials</h2>
+        <!--imgholder div class contains the image and limits the size of the image, imgHolderRight floats the image to the right side of the column on PC and is otherwise inactive, placeholder image-->
+        <div class="imgHolder imgHolderRight">
+        <img src="images/image.png" alt="Your image text here!">
+      </div>
+    </div>
+</div>
+
+<!--Sets up a row with one column within, gives it the id=services for nav bar linking -->
+<div id="services" class="row">
+  <!--Services Row Header -->
+  <span class="center"><h2>Services</h2></span>
+  <!--symbolRow container for set of symbols displayed in a line-->
+  <div class="symbolRow">
+    <!--Each symbol paired with a set of symbolText underneath it, flll symbols with text or images and symbolTexts with captions-->
+    <div class="symbol" id="s1">Service 1</div><div class="symbol" id="s2">Service 2</div><div class="symbol" id="s3">Service 3</div>
+    <div class="symbolText" id="t1">Talk about one of your services here!</div><div class="symbolText" id="t2">Talk about one of your services here!</div><div class="symbolText" id="t3">Talk about one of your services here!</div>
+  </div>
+</div>
+
+<!--row container with footer class applied-->
+<div class="footer row">
+  <!--Column 1 contains company info, fill in yours!-->
+  <div class="col">
+    Email: yourcompany@yourdomain.com<br>
+    Phone: (555) 555-5555<br>
+    Address: 123 Your Company's Street<br>
+    Hours: Mon-Fri: 8 AM - 10 PM<br>
+               <span class="hoursOffset">Sat: 9 AM - 11 PM</span><br>
+                                         <span class="hoursOffset">Sun: Closed</span>
+  </div>
+
+  <!--Column 2 with icons class applied holds each icon link to social media accounts, fill the href attribute with your links!-->
+  <div class="col icons">
+    <a href="" class="fa fa-twitter"></a>
+    <a href="" class="fa fa-facebook"></a>
+    <a href="" class="fa fa-yelp"></a>
+    <a href="" class="fa fa-instagram"></a>
+  </div>
+
+</div>
+
+</body>
+</html>
