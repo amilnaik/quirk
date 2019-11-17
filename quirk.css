@@ -291,7 +291,7 @@ a {
 /*Styling for symbol class, sets block display to keep one element in a line on mobile, line-height centers text in symbol and background, border-radius makes symbol and background circular*/
 .symbol {
   display: block;
-  width: 33vw;
+  width: 50vw;
   height: 50vw;
   text-align: center;
   background-color: #4087f9;
@@ -519,9 +519,9 @@ button:hover {
     margin-left: 8vw;
     margin-right: 8vw;
     margin-top: 0;
-    width: 15.3vw;
-    height: 15.3vw;
-    line-height: 15.3vw;
+    width: 15vw;
+    height: 15vw;
+    line-height: 15vw;
     font-size: 3vw;
   }
 
