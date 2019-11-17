@@ -291,7 +291,7 @@ a {
 /*Styling for symbol class, sets block display to keep one element in a line on mobile, line-height centers text in symbol and background, border-radius makes symbol and background circular*/
 .symbol {
   display: block;
-  width: 50vw;
+  width: 33vw;
   height: 50vw;
   text-align: center;
   background-color: #4087f9;
